@@ -14,8 +14,8 @@
 <body>
 <center>
         <h1>Prueba Tecnica Servisoft S.A.S</h1>
-        	<form>
-        	<select>
+        	<form action="">
+        	<select id ="select_user">
         	<%
             List<User> listUser = (List<User>) request.getAttribute("listUser");
             for(User u : listUser) {%>
@@ -25,11 +25,11 @@
 }
 %>
         	</select>
-        	<!--  Ancien code pour les liens vers les vues -->
-        	<td><a href="/Prueba_tecnica/display?id=<%u.getId();%>&estado=P/>">Show Pendientes</a>
-                    &nbsp;&nbsp;&nbsp;&nbsp;
-                    <a href="/Prueba_tecnica/display?id=<%u.getId();%>&estado=E/>">Show Evacuados</a>  </td>
-             <!--  fin code -->
+             <select id ="select_status">
+             <option value="P">Pendiente</option>
+             <option value="E">Evacuado</option>
+             </select>
+             <input type="submit" value="Display the documents">
         	</form>
     </div>   
     </center>
