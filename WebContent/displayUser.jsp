@@ -20,9 +20,12 @@
         <p>Status : <% user.getStatus();%></p>
         <p>Date of expirement : <% user.getExpiration_date();%></p>
 
-        
+        <%List<Document> listDocument = (List<Document>) request.getAttribute("listDocument");%>    
 <table border="1" cellpadding="5">
             <caption><h2>List of Documents</h2></caption>
+            <% if (user.getStatus() == "S"){
+            	if(!listDocument.isEmpty()){
+            %>
             <tr>
                 <th>ID_Document</th>
                 <th>Enter Date</th>
@@ -30,9 +33,8 @@
                 <th>Status</th>
                 <th>Commentary</th>
             </tr>
-            <%
-            List<Document> listDocument = (List<Document>) request.getAttribute("listDocument");
-            for(Document d : listDocument) {%>
+
+         <%  for(Document d : listDocument) {%>
 <tr>
 <td><%= d.getId() %></td>
 <td><%= d.getEnter_date() %></td>
@@ -42,9 +44,17 @@
 </tr>
 <%
 }
-%>
-        </table>        
-        
-        
+            }
+       else{%>
+           <p> The user is inactive, you can't display his documents </p>
+             
+        <% }  
+            	}
+        else {%>
+		<p> No documents to display</p>
+		<%} %>
+
+
+        </table>                
     </body>
 </html>

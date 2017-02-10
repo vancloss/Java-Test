@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  127.0.0.1
--- Généré le :  Ven 10 Février 2017 à 19:48
+-- Généré le :  Ven 10 Février 2017 à 20:17
 -- Version du serveur :  5.7.11
 -- Version de PHP :  5.6.19
 
@@ -42,7 +42,13 @@ CREATE TABLE `mert_bitacora` (
 
 INSERT INTO `mert_bitacora` (`id_documento`, `tipdocumento`, `fecentrada`, `fecsalida`, `estdodocumento`, `id_ubicacion`, `descomentario`) VALUES
 ('DOC001', 'F', '2017-02-06', NULL, 'P', 'A056D', 'Documento Increible'),
-('DOC002', 'M', '2017-02-06', '2017-02-09', 'E', 'A056D', 'Documento perdido');
+('DOC002', 'M', '2017-02-06', '2017-02-09', 'E', 'A056D', 'Documento perdido'),
+('DOC003', 'F', '2017-02-08', NULL, 'P', 'A057D', 'Archivo chevere'),
+('DOC004', 'A', '2017-02-08', '2017-02-10', 'E', 'A057D', 'Archivo perdido'),
+('DOC005', 'A', '2017-02-08', NULL, 'P', 'A058D', 'un fichier vraiment très sympathique'),
+('DOC006', 'A', '2017-02-06', NULL, 'P', 'A058D', 'Un autre fichier vraiment sympathique'),
+('DOC007', 'A', '2017-02-05', '2017-02-06', 'E', 'A059D', 'Bueno Archivo'),
+('DOC008', 'A', '2017-02-01', '2017-02-04', 'E', 'A059D', 'Si claro');
 
 -- --------------------------------------------------------
 

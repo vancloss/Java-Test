@@ -12,10 +12,6 @@
 <body>
 <center>
         <h1>User Management</h1>
-            <a href="/Prueba_tecnica/new">Add New User</a>
-            &nbsp;&nbsp;&nbsp;
-            <a href="/list">List All Active Users</a>
-             <div align="center">
         	<form>
         	<select>
         	<%
