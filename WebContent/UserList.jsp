@@ -2,7 +2,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page import="java.util.List" %>
-<%@ page import="com.prueba.beans.User" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -14,8 +13,8 @@
 <body>
 <center>
         <h1>Prueba Tecnica Servisoft S.A.S</h1>
-        	<form action="">
-        	<select id ="select_user">
+        	<form method="post" action="ListDocumentbyUserServlet">
+        	<select name ="select_user">
         	<%
             List<User> listUser = (List<User>) request.getAttribute("listUser");
             for(User u : listUser) {%>
@@ -25,7 +24,7 @@
 }
 %>
         	</select>
-             <select id ="select_status">
+             <select name ="select_status">
              <option value="P">Pendiente</option>
              <option value="E">Evacuado</option>
              </select>

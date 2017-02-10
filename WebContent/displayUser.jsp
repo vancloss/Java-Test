@@ -1,4 +1,5 @@
-<%@ page pageEncoding="UTF-8" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <%@ page import="java.util.List" %>
 <%@ page import="com.prueba.beans.User" %>
 <%@ page import="com.prueba.beans.Document" %>
@@ -11,8 +12,6 @@
     </head>
     <body>
     	<% User user = (User) request.getAttribute("user"); %>
-        <%-- Affichage de la chaîne "message" transmise par la servlet --%>
-        <%-- Puis affichage des données enregistrées dans le bean "client" transmis par la servlet --%>
         <p>Firstname : <% user.getFirstname();%></p>
         <p>Password : <% user.getPassword();%></p>
         <p>Mail : <% user.getMail();%></p>
@@ -46,12 +45,12 @@
 }
             }
        else{%>
-           <p> The user is inactive, you can't display his documents </p>
-             
+       		<p> No documents to display</p>
+                       
         <% }  
             	}
         else {%>
-		<p> No documents to display</p>
+<p> The user is inactive, you can't display his documents </p>
 		<%} %>
 
 
