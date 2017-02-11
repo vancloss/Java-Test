@@ -28,7 +28,7 @@
 	</servlet-mapping>
 	<servlet-mapping>
 		<servlet-name>ListDocumentbyUserServlet</servlet-name>
-		<url-pattern>/docuser</url-pattern>
+		<url-pattern>/docsUser</url-pattern>
 	</servlet-mapping>
   <error-page>
     <exception-type>java.lang.Exception</exception-type>

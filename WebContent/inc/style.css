@@ -18,3 +18,14 @@ h1, h2{
 .white{
 	background-color: white;
 }
+.form-group{
+	padding: 0px 20px;
+}
+select{
+	padding: 0px 30px;
+}
+.form-inline{
+	margin-top: 100px;
+	text-align: center;
+	float: none;
+}

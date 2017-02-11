@@ -12,26 +12,36 @@
 <title>Prueba Tecnica</title>
 </head>
 <body>
-<center>
-        <h1>Prueba Tecnica Servisoft S.A.S</h1>
-        	<form method="get" action="docuser">
-        	<select name ="select_user">
+<div class="container">
+<div class="row">
+<div class="col-md-8 col-md-offset-2">
+        <h1>Prueba Tecnica JAVA Servisoft S.A.S</h1>
+</div>
+</div>
+		<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-8 col-md-offset-2">
+        	<form method="post" action="docsUser" class="form-inline">
+        	<div class="form-group">
+        	<select class="form-control" name ="select_user">
         	<%
             List<User> listUser = (List<User>) request.getAttribute("listUser");
             for(User u : listUser) {%>
-            <option value="<%= u.getId() %>"><%= u.getFirstname() %></option>
-            
-            <%
-}
-%>
+            <option value="<%= u.getId() %>"><%= u.getFirstname() %></option>          
+            <% } %>
         	</select>
-             <select name ="select_status">
-             <option value="P">Pendiente</option>
-             <option value="E">Evacuado</option>
+        	</div>
+        	<div class="form-group">
+             <select class="form-control" name ="select_status">
+             <option value="P">Pending</option>
+             <option value="E">Evacuated</option>
              </select>
-             <input type="submit" value="Display the documents">
+                          </div>
+             <button type="submit" class="btn btn-primary">Display the documents</button>
         	</form>
+        </div>
+        </div>
+        </div>
     </div>   
-    </center>
 </body>
 </html>

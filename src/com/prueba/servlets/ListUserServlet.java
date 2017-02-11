@@ -60,7 +60,7 @@ public class ListUserServlet extends HttpServlet {
 			throw new ServletException(e);
 		}
 		request.setAttribute("listUser", listUser);
-		RequestDispatcher dispatcher = request.getRequestDispatcher("viewListUser.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/viewListUser.jsp");
 		dispatcher.forward(request, response);
 	}
 

@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  127.0.0.1
--- Généré le :  Ven 10 Février 2017 à 20:17
+-- Généré le :  Sam 11 Février 2017 à 15:52
 -- Version du serveur :  5.7.11
 -- Version de PHP :  5.6.19
 
@@ -19,6 +19,8 @@ SET time_zone = "+00:00";
 --
 -- Base de données :  `prueba`
 --
+CREATE DATABASE IF NOT EXISTS `prueba` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+USE `prueba`;
 
 -- --------------------------------------------------------
 
@@ -31,7 +33,7 @@ CREATE TABLE `mert_bitacora` (
   `tipdocumento` varchar(1) NOT NULL,
   `fecentrada` date NOT NULL,
   `fecsalida` date DEFAULT NULL,
-  `estdodocumento` varchar(1) NOT NULL,
+  `estdocumento` varchar(1) NOT NULL,
   `id_ubicacion` varchar(20) NOT NULL,
   `descomentario` varchar(255) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
@@ -40,7 +42,7 @@ CREATE TABLE `mert_bitacora` (
 -- Contenu de la table `mert_bitacora`
 --
 
-INSERT INTO `mert_bitacora` (`id_documento`, `tipdocumento`, `fecentrada`, `fecsalida`, `estdodocumento`, `id_ubicacion`, `descomentario`) VALUES
+INSERT INTO `mert_bitacora` (`id_documento`, `tipdocumento`, `fecentrada`, `fecsalida`, `estdocumento`, `id_ubicacion`, `descomentario`) VALUES
 ('DOC001', 'F', '2017-02-06', NULL, 'P', 'A056D', 'Documento Increible'),
 ('DOC002', 'M', '2017-02-06', '2017-02-09', 'E', 'A056D', 'Documento perdido'),
 ('DOC003', 'F', '2017-02-08', NULL, 'P', 'A057D', 'Archivo chevere'),

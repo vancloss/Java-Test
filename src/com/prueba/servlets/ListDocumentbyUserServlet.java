@@ -49,6 +49,14 @@ public class ListDocumentbyUserServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+	   
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
 	    String id = request.getParameter("select_user");
 	    String status = request.getParameter("select_status");
         User user;
@@ -77,17 +85,8 @@ public class ListDocumentbyUserServlet extends HttpServlet {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-        RequestDispatcher dispatcher = request.getRequestDispatcher("viewDocumentUser.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("viewDocumentsUser.jsp");
         dispatcher.forward(request, response);
-	   
-	}
-
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
 	}
 
 }

@@ -103,13 +103,14 @@
 				%>
 				<div class="alert alert-danger">
 					<strong>Error : </strong> The user is inactive, you can't display
-					his documents
+					his documents.
 					</p>
 					<%
 						}
 					%>
 				</div>
 			</table>
+			<a class="btn btn-primary btn-lg active" role="button" href="list">Back to the list</a>
 			</div>
 			</div>
 	</div>

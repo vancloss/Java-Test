@@ -27,7 +27,7 @@ public class User {
         this.id = id;
     }
     
-    public User(String id, String firstname, String password, String mail, String codeidentifcation, String status, Date expiration_date ) {
+    public User(String id, String firstname, String password, String mail, String codeidentification, String status, Date expiration_date ) {
         this.firstname = firstname;
         this.password = password;
         this.mail = mail;
