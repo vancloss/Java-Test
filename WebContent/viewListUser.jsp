@@ -6,14 +6,15 @@
 <html>
 <head>
 <link rel="stylesheet" type="text/css" href="inc/style.css">
-<link rel="stylesheet" type="text/css" href="inc/bootstrap/css/bootstrap.css">
+<link rel="stylesheet" type="text/css"
+	href="inc/bootstrap/css/bootstrap.css">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Prueba Tecnica</title>
 </head>
 <body>
 <center>
         <h1>Prueba Tecnica Servisoft S.A.S</h1>
-        	<form method="post" action="ListDocumentbyUserServlet">
+        	<form method="get" action="docuser">
         	<select name ="select_user">
         	<%
             List<User> listUser = (List<User>) request.getAttribute("listUser");

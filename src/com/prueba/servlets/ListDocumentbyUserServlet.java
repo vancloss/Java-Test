@@ -49,6 +49,36 @@ public class ListDocumentbyUserServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+	    String id = request.getParameter("select_user");
+	    String status = request.getParameter("select_status");
+        User user;
+		try {
+			
+			user = userDAO.getUser(id);
+		    
+
+		} catch (SQLException e ) {
+			// TODO Auto-generated catch block
+			throw new ServletException(e);
+		}
+		request.setAttribute("user", user);
+		
+        List<Document> listDocument;
+		try {
+			listDocument = documentDAO.listAllDocumentbyUser(id, status);
+			try{
+				request.setAttribute("listDocument",listDocument);
+			}
+			catch (NullPointerException e)
+			{
+				throw new ServletException(e);
+			}
+		} catch (SQLException e) {	
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+        RequestDispatcher dispatcher = request.getRequestDispatcher("viewDocumentUser.jsp");
+        dispatcher.forward(request, response);
 	   
 	}
 
@@ -57,39 +87,7 @@ public class ListDocumentbyUserServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		    String id = request.getParameter("select_user");
-		    String status = request.getParameter("select_status");
-	        User user;
-			try {
-				
-				user = userDAO.getUser(id);
-			    
-
-			} catch (SQLException e ) {
-				// TODO Auto-generated catch block
-				throw new ServletException(e);
-			}
-			request.setAttribute("user", user);
-			System.out.println(user.getFirstname());
-	        List<Document> listDocument;
-			try {
-				System.out.println(id);
-				System.out.println(status);
-				listDocument = documentDAO.listAllDocumentbyUser(id, status);
-				try{
-					request.setAttribute("listDocument",listDocument);
-				}
-				catch (NullPointerException e)
-				{
-					throw new ServletException(e);
-				}
-			} catch (SQLException e) {	
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-	       
-	        RequestDispatcher dispatcher = request.getRequestDispatcher("displayUser.jsp");
-	        dispatcher.forward(request, response);
+		doGet(request, response);
 	}
 
 }

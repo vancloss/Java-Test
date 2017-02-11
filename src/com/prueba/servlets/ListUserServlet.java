@@ -23,28 +23,34 @@ import com.prueba.beans.*;
 @WebServlet("/ListUserServlet")
 public class ListUserServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	private UserDAO userDAO;   
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-	
-	public void init() {
-        String jdbcURL = getServletContext().getInitParameter("jdbcURL");
-        String jdbcUsername = getServletContext().getInitParameter("jdbcUsername");
-        String jdbcPassword = getServletContext().getInitParameter("jdbcPassword");
- 
-        userDAO = new UserDAO(jdbcURL, jdbcUsername, jdbcPassword);
- 
-    }
-    public ListUserServlet() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
+	private UserDAO userDAO;
 
 	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#HttpServlet()
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+	public void init() {
+		String jdbcURL = getServletContext().getInitParameter("jdbcURL");
+		String jdbcUsername = getServletContext().getInitParameter(
+				"jdbcUsername");
+		String jdbcPassword = getServletContext().getInitParameter(
+				"jdbcPassword");
+
+		userDAO = new UserDAO(jdbcURL, jdbcUsername, jdbcPassword);
+
+	}
+
+	public ListUserServlet() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
+	 *      response)
+	 */
+	protected void doGet(HttpServletRequest request,
+			HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		List<User> listUser;
 		try {
@@ -53,17 +59,19 @@ public class ListUserServlet extends HttpServlet {
 			// TODO Auto-generated catch block
 			throw new ServletException(e);
 		}
-        request.setAttribute("listUser", listUser);
-        RequestDispatcher dispatcher = request.getRequestDispatcher("UserList.jsp");
-        dispatcher.forward(request, response);
+		request.setAttribute("listUser", listUser);
+		RequestDispatcher dispatcher = request.getRequestDispatcher("viewListUser.jsp");
+		dispatcher.forward(request, response);
 	}
 
 	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
+	 *      response)
 	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request,
+			HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		doGet(request, response);
+		// doGet(request, response);
 	}
 
 }
